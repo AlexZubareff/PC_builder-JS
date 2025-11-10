@@ -18,7 +18,6 @@ modalBtn.addEventListener('click', () => {
   const closeBtn = modal.querySelector('.modal__close')
   //Навешиваем слушателя на изображение
   closeBtn.addEventListener('click', () => {
-    console.log(closeBtn)
     modal.style.display = ''
     closeBtn.remove()
   })
