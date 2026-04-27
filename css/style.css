@@ -657,7 +657,7 @@ progress::-moz-progress-value {
   transform: translateY(0);
 }
 
-/* Светлая тема */
+/* Светлая тема — ПОЛНАЯ */
 .theme-light {
   background-image: linear-gradient(to right top, #f5f5f5, #e8e8e8, #ebebeb, #f0f0f0, #ffffff);
   color: #222;
@@ -667,12 +667,92 @@ progress::-moz-progress-value {
   background: rgba(255, 255, 255, 0.95);
 }
 
+.theme-light .header__nav a {
+  color: #333;
+}
+
+.theme-light .main-display__header {
+  color: #fff;
+}
+
+.theme-light .timer__count {
+  color: #fff;
+}
+
+.theme-light .timer__text {
+  color: #ccc;
+}
+
+.theme-light .course {
+  background: #f0f0f0;
+}
+
+.theme-light .course__counter span {
+  color: #555;
+}
+
+.theme-light .course__number {
+  color: #333;
+}
+
 .theme-light .work__description {
   color: #444;
 }
 
+.theme-light .process__header,
+.theme-light .process__work {
+  color: #222;
+}
+
+.theme-light .process__description {
+  color: #666;
+}
+
 .theme-light .process__text {
   color: #555;
+}
+
+.theme-light .program__header {
+  color: #222;
+}
+
+.theme-light .program__description {
+  color: #666;
+}
+
+.theme-light .program-line__title {
+  color: #333;
+}
+
+.theme-light .program-line__descr {
+  background: #e8e8e8;
+  color: #555;
+}
+
+.theme-light .program-line__descr.active {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.theme-light .command__name {
+  color: #222;
+}
+
+.theme-light .command__profession {
+  color: #666;
+}
+
+.theme-light .assembly__header {
+  color: #fff;
+}
+
+.theme-light .assembly__description {
+  color: #bbb;
+}
+
+.theme-light .configurator__header {
+  color: #222;
 }
 
 .theme-light .configurator__select {
@@ -691,6 +771,10 @@ progress::-moz-progress-value {
   color: #df5950;
 }
 
+.theme-light .configurator__preset-btn {
+  background: #df5950;
+}
+
 .theme-light .reviews__card {
   background: #fff;
   color: #333;
@@ -699,6 +783,10 @@ progress::-moz-progress-value {
 
 .theme-light .reviews__author {
   color: #888;
+}
+
+.theme-light .reviews__header {
+  color: #222;
 }
 
 .theme-light .modal-bio__content {
@@ -716,11 +804,31 @@ progress::-moz-progress-value {
 
 .theme-light .modal__inner {
   background: #f8f8f8;
+  color: #333;
 }
 
-.theme-light .program-line__descr.active {
-  background: #f0f0f0;
+.theme-light .modal__header {
   color: #333;
+}
+
+.theme-light .modal__subheader {
+  color: #666;
+}
+
+.theme-light .modal__input {
+  background: #e0e0e0;
+}
+
+.theme-light .modal__input input {
+  color: #333;
+}
+
+.theme-light .footer {
+  border-top: 1px solid #ddd;
+}
+
+.theme-light .footer__copy {
+  color: #999;
 }
 
 /* Конфигуратор */

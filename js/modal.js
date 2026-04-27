@@ -1,37 +1,44 @@
 const modal = () => {
-  const modalBtn = document.querySelector('.modal__button')
   const modal = document.querySelector('.modal')
+  const modalBtns = document.querySelectorAll('.modal__button')
 
-  modalBtn.addEventListener('click', () => {
-    modal.style.display = 'flex'
-    const imgCross = document.createElement('img')
-    // Устанавливаем путь к изображению
-    imgCross.src = 'img/close.svg'
-    // Устанавливаем альтернативный текст для изображения
-    imgCross.alt = 'close'
-    // Устанавливаем стили для изображения
-    imgCross.classList.add('modal__close')
-    // Получаем форму, куда нужно вставить изображение
-    const modalInner = document.querySelector('.modal__inner')
-    // Вставляем изображение в форму
-    modalInner.append(imgCross)
-    // Получаем изображение, чтобы в последствии его удалить при закрытии модального окна
-    const closeBtn = modal.querySelector('.modal__close')
-    //Навешиваем слушателя на изображение
-    closeBtn.addEventListener('click', () => {
-      modal.style.display = ''
-      closeBtn.remove()
+  // Открытие модалки с любой кнопки .modal__button
+  modalBtns.forEach(btn => {
+    btn.addEventListener('click', e => {
+      // Предотвращаем отправку формы если кнопка внутри неё
+      if (e.target.closest('.modal')) return
+
+      modal.style.display = 'flex'
+
+      // Крестик закрытия (добавляем только если ещё нет)
+      if (!modal.querySelector('.modal__close')) {
+        const imgCross = document.createElement('img')
+        imgCross.src = 'img/close.svg'
+        imgCross.alt = 'close'
+        imgCross.classList.add('modal__close')
+        const modalInner = modal.querySelector('.modal__inner')
+        modalInner.append(imgCross)
+
+        const closeBtn = modal.querySelector('.modal__close')
+        closeBtn.addEventListener('click', e => {
+          e.stopPropagation()
+          modal.style.display = ''
+          closeBtn.remove()
+        })
+      }
     })
   })
 
+  // Закрытие по клику вне модалки
   modal.addEventListener('click', e => {
-    const modelContent = e.target.closest('.modal__inner')
+    const modalContent = e.target.closest('.modal__inner')
     const closeBtn = modal.querySelector('.modal__close')
 
-    if (!modelContent) {
+    if (!modalContent) {
       modal.style.display = ''
-      closeBtn.remove()
+      if (closeBtn) closeBtn.remove()
     }
   })
 }
+
 modal()
