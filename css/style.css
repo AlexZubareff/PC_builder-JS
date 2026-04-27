@@ -643,6 +643,406 @@ progress::-moz-progress-value {
   height: 100% !important;
 }
 
+/* ========== НОВЫЕ СТИЛИ ========== */
+
+/* Анимации при скролле */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Светлая тема */
+.theme-light {
+  background-image: linear-gradient(to right top, #f5f5f5, #e8e8e8, #ebebeb, #f0f0f0, #ffffff);
+  color: #222;
+}
+
+.theme-light .header__wrap {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.theme-light .work__description {
+  color: #444;
+}
+
+.theme-light .process__text {
+  color: #555;
+}
+
+.theme-light .configurator__select {
+  background: #fff;
+  color: #222;
+  border: 2px solid #ddd;
+}
+
+.theme-light .configurator__total {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  color: #222;
+}
+
+.theme-light .configurator__total-price {
+  color: #df5950;
+}
+
+.theme-light .reviews__card {
+  background: #fff;
+  color: #333;
+  border: 1px solid #e0e0e0;
+}
+
+.theme-light .reviews__author {
+  color: #888;
+}
+
+.theme-light .modal-bio__content {
+  background: #fff;
+  color: #333;
+}
+
+.theme-light .modal-bio__role {
+  color: #df5950;
+}
+
+.theme-light .modal-bio__text {
+  color: #555;
+}
+
+.theme-light .modal__inner {
+  background: #f8f8f8;
+}
+
+.theme-light .program-line__descr.active {
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* Конфигуратор */
+.configurator {
+  padding: 8rem 0;
+}
+
+.configurator__wrap {
+  text-align: center;
+}
+
+.configurator__header {
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 140%;
+  margin-bottom: 1rem;
+}
+
+.configurator__description {
+  font-size: 1.6rem;
+  opacity: 0.7;
+  margin-bottom: 4rem;
+}
+
+.configurator__builder {
+  max-width: 55rem;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.configurator__summary {
+  margin-bottom: 2rem;
+}
+
+.configurator__total {
+  background: #2c2c2c;
+  border: 2px solid #df5950;
+  border-radius: 1.2rem;
+  padding: 2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.configurator__total-label {
+  font-size: 1.8rem;
+  opacity: 0.7;
+}
+
+.configurator__total-price {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #df5950;
+}
+
+.configurator__block {
+  margin-bottom: 1.6rem;
+}
+
+.configurator__label {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+  opacity: 0.8;
+}
+
+.configurator__select {
+  width: 100%;
+  padding: 1.2rem 1.6rem;
+  font-size: 1.4rem;
+  background: #1a1a1a;
+  color: #fff;
+  border: 2px solid #333;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  font-family: 'Roboto', sans-serif;
+}
+
+.configurator__select:hover,
+.configurator__select:focus {
+  border-color: #df5950;
+  outline: none;
+}
+
+.configurator__note {
+  font-size: 1.2rem;
+  opacity: 0.5;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.configurator__presets {
+  text-align: center;
+}
+
+.configurator__presets-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.configurator__preset-btn {
+  margin: 0.4rem;
+  padding: 0.8rem 1.6rem;
+  background: linear-gradient(94.78deg, #df5950 11.19%, #451046 93.72%);
+  color: #fff;
+  border: none;
+  border-radius: 3rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  transition: opacity 0.2s;
+}
+
+.configurator__preset-btn:hover {
+  opacity: 0.85;
+}
+
+/* Отзывы */
+.reviews {
+  padding: 8rem 0;
+}
+
+.reviews__wrap {
+  text-align: center;
+}
+
+.reviews__header {
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 140%;
+  margin-bottom: 4rem;
+}
+
+.reviews__slider {
+  max-width: 60rem;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.reviews__track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reviews__card {
+  min-width: 100%;
+  padding: 3rem 4rem;
+  background: #1a1a1a;
+  border-radius: 1.6rem;
+  border: 1px solid #333;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.reviews__stars {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.reviews__text {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.reviews__author {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #999;
+}
+
+.reviews__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.reviews__arrow {
+  background: none;
+  border: 2px solid #df5950;
+  color: #df5950;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reviews__arrow:hover {
+  background: #df5950;
+  color: #fff;
+}
+
+.reviews__dots {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.reviews__dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #555;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.reviews__dot--active {
+  background: #df5950;
+}
+
+/* Модалки биографий */
+.modal-bio {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.modal-bio__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-bio__content {
+  position: relative;
+  background: #2c2c2c;
+  border-radius: 1.6rem;
+  max-width: 50rem;
+  width: 100%;
+  padding: 4rem;
+  z-index: 1;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.modal-bio__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 3rem;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.modal-bio__close:hover {
+  opacity: 1;
+}
+
+.modal-bio__name {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.modal-bio__role {
+  font-size: 1.6rem;
+  color: #df5950;
+  margin-bottom: 2rem;
+}
+
+.modal-bio__stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.modal-bio__stat {
+  font-size: 1.4rem;
+  background: rgba(223, 89, 80, 0.15);
+  padding: 0.6rem 1.2rem;
+  border-radius: 2rem;
+  color: #df5950;
+}
+
+.modal-bio__text {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  opacity: 0.8;
+}
+
+/* Футер */
+.footer {
+  padding: 3rem 0;
+  border-top: 1px solid #333;
+}
+
+.footer__wrap {
+  text-align: center;
+}
+
+.footer__copy {
+  font-size: 1.3rem;
+  opacity: 0.5;
+}
+
+.theme-light .footer {
+  border-top-color: #ddd;
+}
+
+/* ========== КОНЕЦ НОВЫХ СТИЛЕЙ ========== */
+
 /*сетка*/
 @media (max-width: 108em) {
   html {

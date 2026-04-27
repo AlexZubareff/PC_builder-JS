@@ -5,35 +5,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta name="description" content="Собираем мощный игровой ПК под ваш бюджет. Конфигуратор, подбор комплектующих, сборка и настройка. Экономьте до 40% без потери производительности.">
+    <meta name="keywords" content="сборка пк, игровой компьютер, конфигуратор пк, компьютер под заказ, мощный пк, апгрейд компьютера">
+    <meta name="author" content="PC Builder">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Собираем игровой ПК под ваш бюджет">
+    <meta property="og:description" content="Конфигуратор, подбор комплектующих, сборка и настройка. Экономьте до 40%!">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="img/logo.svg">
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <title>Собираем ПК</title>
+    <title>Собираем ПК — игровой компьютер под ваш бюджет</title>
     <script src="https://cdn.jsdelivr.net/npm/seamless-scroll-polyfill@latest"></script>
     <script src="./js/accordeon.js" defer></script>
     <script src="./js/modal.js" defer></script>
     <script src="./js/smoothScroll.js" defer></script>
     <script src="./js/timer.js" defer></script>
     <script src="./js/sendForm.js" defer></script>
-
-
+    <script src="./js/configurator.js" defer></script>
+    <script src="./js/scrollAnimations.js" defer></script>
+    <script src="./js/themeToggle.js" defer></script>
+    <script src="./js/reviews.js" defer></script>
+    <script src="./js/countUp.js" defer></script>
+    <script src="./js/teamBio.js" defer></script>
 </head>
 
 <body>
     <header class="header">
         <div class="header__wrap">
             <a href="#" class="header__logo">
-                <img src="img/logo.svg" alt="">
+                <img src="img/logo.svg" alt="PC Builder">
             </a>
             <div class="header__menu">
                 <nav class="header__nav block-center-horis">
                     <a href="#work">Чем занимаемся</a>
+                    <a href="#configurator">Конфигуратор</a>
                     <a href="#process">Процесс работы</a>
                     <a href="#command">Команда</a>
+                    <a href="#reviews">Отзывы</a>
                 </nav>
-                <button class="button header__button">Зайти в кабинет</button>
+                <button class="button header__button theme-toggle" id="themeToggle">🌙</button>
             </div>
         </div>
     </header>
@@ -41,7 +64,7 @@
     <main>
         <section class="main-display">
             <div class="container">
-                <h1 class="main-display__header">Собираем игровой ПК под ваш бюджет</h1>
+                <h1 class="main-display__header fade-in">Собираем игровой ПК под ваш бюджет</h1>
                 <div class="timer main-display__timer">
                     <div class="timer__item block-center">
                         <div class="timer__count timer__days">18</div>
@@ -62,11 +85,11 @@
                 </div>
             </div>
             <div class="main-display__background">
-                <img src="img/main-screen__bgc.jpg" alt="">
+                <img src="img/main-screen__bgc.jpg" alt="Игровой компьютер">
             </div>
         </section>
 
-        <div class="course">
+        <div class="course fade-in">
             <div class="container">
                 <div class="course__wrap">
                     <div class="course-button__wrap">
@@ -75,17 +98,17 @@
                     <div class="course__counter">
                         <div class="course__counter-line">
                             <span>Учеников всего:</span>
-                            <span class="course__number">200</span>
+                            <span class="course__number count-number" data-target="200">0</span>
                         </div>
                         <div class="course__counter-line">
                             <span>Успешно закончили курс:</span>
-                            <span class="course__number">190</span>
+                            <span class="course__number count-number" data-target="190">0</span>
                         </div>
                     </div>
                     <div class="course__progress">
                         <div class="course__progress-label">
                             <span>Заработано учениками:</span>
-                            <span class="course__number">400 000₽</span>
+                            <span class="course__number count-number" data-target="400000">0</span>
                         </div>
                         <div class="course__progress-element">
                             <progress min="0" max="1000000" value="400000" />
@@ -101,9 +124,9 @@
 
         <section class="work" id="work">
             <div class="container">
-                <div class="work__wrap">
+                <div class="work__wrap fade-in">
                     <div class="work__img">
-                        <img src="img/work__img.png" alt="">
+                        <img src="img/work__img.png" alt="Сборка ПК">
                     </div>
                     <div class="work__text">
                         <h2 class="work__header">Чем мы занимаемся</h2>
@@ -116,34 +139,45 @@
             </div>
         </section>
 
+        <!-- Секция конфигуратора -->
+        <section class="configurator" id="configurator">
+            <div class="container">
+                <div class="configurator__wrap fade-in">
+                    <h2 class="configurator__header">🛠️ Конфигуратор ПК</h2>
+                    <p class="configurator__description">Выберите комплектующие — мы рассчитаем примерную стоимость</p>
+                    <div class="configurator__builder"></div>
+                </div>
+            </div>
+        </section>
+
         <section class="process" id="process">
             <div class="container">
-                <div class="process__wrap">
+                <div class="process__wrap fade-in">
                     <div class="process__title block-center-horis">
                         <div class="process__img">
-                            <img src="img/process-img.svg" alt="">
+                            <img src="img/process-img.svg" alt="Процесс работы">
                         </div>
                         <h2 class="process__header">Процесс работы</h2>
                     </div>
                     <div class="process__description">Подробно рассказываем о том, как происходит сборка, от заявки до
                         выдачи вашего заказа</div>
                     <div class="process__columns">
-                        <div class="process__item">
+                        <div class="process__item fade-in">
                             <div class="process__work">Заявка</div>
                             <div class="process__text">Мы получаем вашу заявку, связываемся с вами для уточнения
                                 деталей, чтобы понять ваши ожидания от будущего компьютера.</div>
                         </div>
-                        <div class="process__item">
+                        <div class="process__item fade-in">
                             <div class="process__work">Подбор</div>
                             <div class="process__text">После оплаты подбираем комплектующие, которые дадут максимальную
                                 производительность. Заказываем их напрямую у поставщиков.</div>
                         </div>
-                        <div class="process__item">
+                        <div class="process__item fade-in">
                             <div class="process__work">Сборка</div>
                             <div class="process__text">Собираем компьютер, проводим стартовую диагностику, устанавливаем
                                 операционную систему и необходимые драйверы для работы.</div>
                         </div>
-                        <div class="process__item">
+                        <div class="process__item fade-in">
                             <div class="process__work">Выдача</div>
                             <div class="process__text">Отдаём компьютер вам в назначенный срок, проводим вместе
                                 тестирование, подписываем документы о выполнении работы и гарантии.</div>
@@ -155,22 +189,22 @@
 
         <section class="program">
             <div class="container">
-                <div class="program__image">
-                    <img src="./img/program.svg" alt="">
+                <div class="program__image fade-in">
+                    <img src="./img/program.svg" alt="Программа обучения">
                 </div>
-                <h2 class="program__header">Программа обучения</h2>
-                <p class="program__description">Больше 90% учеников прошли полный курс и смогли собрать свой первый
+                <h2 class="program__header fade-in">Программа обучения</h2>
+                <p class="program__description fade-in">Больше 90% учеников прошли полный курс и смогли собрать свой первый
                     компьютер</p>
                 <div class="program__content">
                     <div class="program-line">
-                        <div class="program-line__content">
+                        <div class="program-line__content fade-in">
                             <h3 class="program-line__title">Неделя №1</h3>
                             <p class="program-line__descr active">
                                 Красивая часть курса,
                                 которая помогает в успехе
                             </p>
                         </div>
-                        <div class="program-line__content">
+                        <div class="program-line__content fade-in">
                             <h3 class="program-line__title">Неделя №2</h3>
                             <p class="program-line__descr">
                                 Красивая часть курса,
@@ -179,14 +213,14 @@
                         </div>
                     </div>
                     <div class="program-line">
-                        <div class="program-line__content">
+                        <div class="program-line__content fade-in">
                             <h3 class="program-line__title">Неделя №3</h3>
                             <p class="program-line__descr">
                                 Красивая часть курса,
                                 которая помогает в успехе
                             </p>
                         </div>
-                        <div class="program-line__content">
+                        <div class="program-line__content fade-in">
                             <h3 class="program-line__title">Неделя №4</h3>
                             <p class="program-line__descr">
                                 Красивая часть курса,
@@ -195,14 +229,14 @@
                         </div>
                     </div>
                     <div class="program-line">
-                        <div class="program-line__content">
+                        <div class="program-line__content fade-in">
                             <h3 class="program-line__title">Неделя №5</h3>
                             <p class="program-line__descr">
                                 Красивая часть курса,
                                 которая помогает в успехе
                             </p>
                         </div>
-                        <div class="program-line__content">
+                        <div class="program-line__content fade-in">
                             <h3 class="program-line__title">Неделя №6</h3>
                             <p class="program-line__descr">
                                 Красивая часть курса,
@@ -216,36 +250,55 @@
 
         <section class="command" id="command">
             <div class="container">
-                <div class="process__title command__title">
+                <div class="process__title command__title fade-in">
                     <div class="process__img command__img-title">
-                        <img src="img/comand.svg" alt="">
+                        <img src="img/comand.svg" alt="Наша команда">
                     </div>
                     <h2 class="process__header">Наша команда</h2>
                 </div>
                 <div class="command__wrap">
-                    <div class="command__item block-center-horis">
+                    <div class="command__item block-center-horis fade-in" data-person="evgeny">
                         <div class="command__img">
-                            <img src="img/com-1.png" alt="">
+                            <img src="img/com-1.png" alt="Евгений Петров">
                         </div>
                         <h3 class="command__name">Евгений Петров</h3>
                         <div class="command__profession">Специалист по видеокартам</div>
-                        <button class="button command__button">Биография</button>
+                        <button class="button command__button bio-btn">Биография</button>
                     </div>
-                    <div class="command__item block-center-horis">
+                    <div class="command__item block-center-horis fade-in" data-person="alexey">
                         <div class="command__img">
-                            <img src="img/com-2.png" alt="">
+                            <img src="img/com-2.png" alt="Алексей Козлов">
                         </div>
                         <h3 class="command__name">Алексей Козлов</h3>
-                        <div class="command__profession">Специалист по видеокартам</div>
-                        <button class="button command__button">Биография</button>
+                        <div class="command__profession">Специалист по процессорам</div>
+                        <button class="button command__button bio-btn">Биография</button>
                     </div>
-                    <div class="command__item block-center-horis">
+                    <div class="command__item block-center-horis fade-in" data-person="dmitry">
                         <div class="command__img">
-                            <img src="img/com-3.png" alt="">
+                            <img src="img/com-3.png" alt="Дмитрий Иванов">
                         </div>
                         <h3 class="command__name">Дмитрий Иванов</h3>
-                        <div class="command__profession">Специалист по видеокартам</div>
-                        <button class="button command__button">Биография</button>
+                        <div class="command__profession">Ведущий инженер-сборщик</div>
+                        <button class="button command__button bio-btn">Биография</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Отзывы -->
+        <section class="reviews" id="reviews">
+            <div class="container">
+                <div class="reviews__wrap fade-in">
+                    <h2 class="reviews__header">⭐ Отзывы клиентов</h2>
+                    <div class="reviews__slider">
+                        <div class="reviews__track" id="reviewsTrack">
+                            <!-- заполняется из JS -->
+                        </div>
+                        <div class="reviews__controls">
+                            <button class="reviews__arrow reviews__arrow--prev" id="reviewsPrev">←</button>
+                            <div class="reviews__dots" id="reviewsDots"></div>
+                            <button class="reviews__arrow reviews__arrow--next" id="reviewsNext">→</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -253,28 +306,36 @@
 
         <section class="assembly">
             <div class="container">
-                <div class="assembly__wrap block-center-horis">
+                <div class="assembly__wrap block-center-horis fade-in">
                     <h2 class="assembly__header">Закажите свою уникальную сборку</h2>
                     <div class="assembly__description">Мы свяжемся с вами, чтобы уточнить детали заказа</div>
-                    <button class="button assembly__button  modal__button">Оставить заявку</button>
+                    <button class="button assembly__button modal__button">Оставить заявку</button>
                     <div class="assembly__socials">
-                        <div class="assembly__item block-center">
-                            <img src="img/vk.svg" alt="">
-                        </div>
-                        <div class="assembly__item block-center">
-                            <img src="img/ytb.svg" alt="">
-                        </div>
-                        <div class="assembly__item block-center">
-                            <img src="img/fb.svg" alt="">
-                        </div>
-                        <div class="assembly__item block-center">
-                            <img src="img/inst.svg" alt="">
-                        </div>
+                        <a href="https://vk.com" target="_blank" rel="noopener noreferrer" class="assembly__item block-center" title="VK">
+                            <img src="img/vk.svg" alt="VK">
+                        </a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="assembly__item block-center" title="YouTube">
+                            <img src="img/ytb.svg" alt="YouTube">
+                        </a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="assembly__item block-center" title="Facebook">
+                            <img src="img/fb.svg" alt="Facebook">
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="assembly__item block-center" title="Instagram">
+                            <img src="img/inst.svg" alt="Instagram">
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrap">
+                <p class="footer__copy">© 2026 PC Builder. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
 
     <form action="#" class="modal block-center">
         <div class="modal__inner">
@@ -294,6 +355,15 @@
             </div>
         </div>
     </form>
+
+    <!-- Модалки биографий -->
+    <div class="modal-bio" id="bioModal">
+        <div class="modal-bio__overlay"></div>
+        <div class="modal-bio__content">
+            <button class="modal-bio__close">&times;</button>
+            <div class="modal-bio__inner" id="bioContent"></div>
+        </div>
+    </div>
 </body>
 
 </html>
