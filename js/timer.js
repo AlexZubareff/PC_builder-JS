@@ -16,7 +16,7 @@ const timer = () => {
   const updateTimer = () => {
     const date = new Date()
 
-    const dateDeadline = new Date('11 november 2025').getTime()
+    const dateDeadline = new Date('31 december 2026').getTime()
     const timeRemaining = (dateDeadline - date) / 1000
     const days = Math.floor(timeRemaining / 60 / 60 / 24)
     const hours = Math.floor((timeRemaining / 60 / 60) % 24)

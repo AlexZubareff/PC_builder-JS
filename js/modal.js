@@ -6,7 +6,7 @@ const modal = () => {
     modal.style.display = 'flex'
     const imgCross = document.createElement('img')
     // Устанавливаем путь к изображению
-    imgCross.src = '../img/close.svg'
+    imgCross.src = 'img/close.svg'
     // Устанавливаем альтернативный текст для изображения
     imgCross.alt = 'close'
     // Устанавливаем стили для изображения
