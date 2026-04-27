@@ -1151,95 +1151,471 @@ progress::-moz-progress-value {
 
 /* ========== КОНЕЦ НОВЫХ СТИЛЕЙ ========== */
 
-/*сетка*/
-@media (max-width: 108em) {
-  html {
-    font-size: 9px;
-  }
-}
+/* ========== АДАПТИВ ДЛЯ ПЛАНШЕТОВ И МОБИЛЬНЫХ ========== */
 
-@media (max-width: 105em) {
-  html {
-    font-size: 8.75px;
-  }
-}
-
-@media (max-width: 91.5em) {
-  html {
-    font-size: 7.9px;
-  }
-}
-
-@media (max-width: 91em) {
-  html {
-    font-size: 8.4px;
-  }
-}
-
-@media (max-width: 90em) {
-  html {
-    font-size: 7.9px;
-  }
-}
-
-@media (max-width: 80em) {
-  html {
-    font-size: 7.2px;
-  }
-}
-
-@media (max-width: 72em) {
-  html {
-    font-size: 6.5px;
-  }
-}
-
+/* Планшеты (до 1024px) */
 @media (max-width: 64em) {
-  html {
-    font-size: 5.5px;
+  .container {
+    width: 96%;
+    padding: 0 2rem;
+  }
+
+  .header {
+    padding: 2rem 3rem;
+  }
+
+  .header__button {
+    margin-left: 0;
+  }
+
+  .header__nav a {
+    font-size: 1.4rem;
+  }
+
+  .header__nav a:not(:last-child) {
+    margin-right: 2.5rem;
+  }
+
+  .main-display__header {
+    font-size: 4rem;
+    max-width: 60rem;
+  }
+
+  .course__wrap {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .course-button__wrap {
+    margin-right: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .course__counter {
+    margin-right: 2rem;
+  }
+
+  .work__wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work__img {
+    width: 100%;
+    max-width: 40rem;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+
+  .work__text {
+    padding-top: 0;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .work__header {
+    font-size: 3.6rem;
+  }
+
+  .process__columns {
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+  }
+
+  .process__columns:after {
+    display: none;
+  }
+
+  .process__item {
+    max-width: 45%;
+  }
+
+  .configurator__builder {
+    max-width: 100%;
+  }
+
+  .command__wrap {
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+
+  .modal__inner {
+    width: 90%;
+    padding: 5rem 4rem;
+  }
+
+  .modal__elements {
+    width: 100%;
+  }
+
+  .modal__header {
+    font-size: 3.2rem;
+  }
+
+  .assembly__header {
+    font-size: 3.6rem;
+    text-align: center;
+  }
+
+  .reviews__card {
+    padding: 3rem 2.5rem;
+  }
+
+  .program-line {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .program-line__content {
+    width: 48%;
   }
 }
 
+/* Мобильные (до 768px) */
 @media (max-width: 48em) {
   html {
     font-size: 10px;
   }
+
+  .header {
+    padding: 1.5rem 2rem;
+    position: relative;
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .theme-light .header {
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  .header__wrap {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .header__nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .header__nav a:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .header__nav a {
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .header__button {
+    margin-left: 0;
+    padding: 0.6rem 2rem;
+    font-size: 1.3rem;
+  }
+
+  .main-display {
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+  }
+
+  .main-display__header {
+    font-size: 2.8rem;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .main-display__timer {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+  .timer__item {
+    width: 8rem;
+    height: 9rem;
+    margin-bottom: 1rem;
+  }
+
+  .timer__item:not(:last-child) {
+    margin-right: 1.5rem;
+  }
+
+  .timer__count {
+    font-size: 2.6rem;
+  }
+
+  .timer__text {
+    font-size: 1.2rem;
+  }
+
+  .course {
+    padding-top: 4rem;
+  }
+
+  .course__wrap {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .course-button__wrap {
+    margin-right: 0;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .course__counter {
+    margin-right: 0;
+    margin-bottom: 2rem;
+    min-width: auto;
+  }
+
+  .course__progress-label {
+    max-width: 100%;
+  }
+
+  .work {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .work__img {
+    max-width: 28rem;
+    height: auto;
+  }
+
+  .work__header {
+    font-size: 2.6rem;
+  }
+
+  .work__description {
+    font-size: 1.4rem;
+  }
+
+  .process {
+    padding-bottom: 6rem;
+  }
+
+  .process__header {
+    font-size: 2.6rem;
+  }
+
+  .process__columns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .process__item {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .process__work {
+    margin-bottom: 2rem;
+    font-size: 2.6rem;
+  }
+
+  .configurator {
+    padding: 4rem 0;
+  }
+
+  .configurator__header {
+    font-size: 2.6rem;
+  }
+
+  .configurator__total {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .configurator__total-price {
+    font-size: 2.4rem;
+  }
+
+  .configurator__preset-btn {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+    margin: 0.2rem;
+  }
+
+  .program {
+    margin-bottom: 6rem;
+  }
+
+  .program__header {
+    font-size: 2.6rem;
+  }
+
+  .program__description {
+    margin: 2rem auto 4rem;
+  }
+
+  .program-line {
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    gap: 1rem;
+  }
+
+  .program-line__content {
+    width: 100%;
+    text-align: center !important;
+  }
+
+  .program-line__content:nth-child(2n) {
+    margin-top: 0;
+  }
+
+  .program-line__descr.active {
+    height: auto;
+  }
+
+  .program__content::before {
+    display: none;
+  }
+
+  .command {
+    padding-bottom: 6rem;
+  }
+
+  .command__title {
+    margin-bottom: 5rem;
+  }
+
+  .command__wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .command__img {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  .command__name {
+    font-size: 2rem;
+  }
+
+  .assembly {
+    padding-bottom: 8rem;
+  }
+
+  .assembly__header {
+    font-size: 2.6rem;
+    text-align: center;
+  }
+
+  .assembly__socials {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .assembly__item:not(:last-child) {
+    margin-right: 0;
+  }
+
+  .reviews {
+    padding: 4rem 0;
+  }
+
+  .reviews__header {
+    font-size: 2.6rem;
+  }
+
+  .reviews__card {
+    padding: 2rem 1.8rem;
+  }
+
+  .reviews__stars {
+    font-size: 1.6rem;
+  }
+
+  .reviews__text {
+    font-size: 1.4rem;
+  }
+
+  .modal__inner {
+    padding: 4rem 2.5rem;
+  }
+
+  .modal__header {
+    font-size: 2.6rem;
+  }
+
+  .modal__elements {
+    width: 100%;
+  }
+
+  .modal-bio__content {
+    padding: 3rem 2rem;
+  }
+
+  .modal-bio__name {
+    font-size: 2.2rem;
+  }
+
+  .modal-bio__stats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer {
+    padding: 2rem 0;
+  }
 }
 
-@media (max-width: 44em) {
+/* Маленькие мобильные (до 480px) */
+@media (max-width: 30em) {
   html {
     font-size: 9px;
   }
-}
 
-@media (max-width: 38em) {
-  html {
-    font-size: 8px;
+  .header__nav a {
+    font-size: 1.1rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .main-display__header {
+    font-size: 2.2rem;
+  }
+
+  .timer__item {
+    width: 6.5rem;
+    height: 7.5rem;
+  }
+
+  .timer__item:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  .timer__count {
+    font-size: 2rem;
+  }
+
+  .configurator__select {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  .command__img {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .reviews__card {
+    padding: 1.5rem;
+  }
+
+  .reviews__arrow {
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: 1.4rem;
   }
 }
 
-@media (max-width: 34em) {
-  html {
-    font-size: 7px;
-  }
-}
-
-@media (max-width: 30em) {
-  html {
-    font-size: 6px;
-  }
-}
-
-@media (max-width: 26em) {
-  html {
-    font-size: 4.5px;
-  }
-}
-
-@media (max-width: 21em) {
-  html {
-    font-size: 4.4px;
-  }
-}
-
-/*сетка*/
+/* ========== КОНЕЦ АДАПТИВА ========== */
