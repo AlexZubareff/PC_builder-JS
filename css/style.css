@@ -604,6 +604,11 @@ progress::-moz-progress-value {
   padding-right: 3rem;
 }
 
+.modal__input input::placeholder {
+  color: #fff;
+  opacity: 0.6;
+}
+
 .modal__input:not(:last-child) {
   margin-bottom: 1.6rem;
 }
